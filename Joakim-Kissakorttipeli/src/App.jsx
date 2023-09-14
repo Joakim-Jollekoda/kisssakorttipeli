@@ -1,4 +1,5 @@
 import Card from './components/Card'
+import './app.css'
 
 export default function App(){
   return(
@@ -6,9 +7,9 @@ export default function App(){
     
     <h1>Hello world!</h1>
     <Card/>
-    
 
     </>
+    
   
 
   );
