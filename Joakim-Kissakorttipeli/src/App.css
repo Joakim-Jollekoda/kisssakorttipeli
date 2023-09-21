@@ -1,5 +1,18 @@
 .card{
     width: 120px;
     height: 200px;
-    background-color: blue;
+    background-color: rgb(27, 209, 241);
+    border-radius: 8px;
+    border: 4px solid rgb(83, 163, 61);
+    box-shadow: 1px 1px 4px 1px green;
+    overflow: hidden;
+}
+.stat-list{
+    margin:0;
+    padding:0 8px;
+}
+.stat-list-item{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
