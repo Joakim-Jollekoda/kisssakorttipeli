@@ -25,3 +25,19 @@
     align-self: center;
     min-width: 10vw;
 }
+
+.card-list{
+    display: flex;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.card-list-item.player{
+    margin-left: calc(2vw - 140px);
+}
+.card-list-item.opponent{
+    margin-right: calc(2vw - 140px);
+}
