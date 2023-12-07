@@ -1,7 +1,7 @@
 .card{
     width: 120px;
     height: 200px;
-    background-color: rgb(27, 209, 241);
+    background-color: rgb(27, 241, 159);
     border-radius: 8px;
     border: 4px solid rgb(83, 163, 61);
     box-shadow: 1px 1px 4px 1px green;
@@ -28,6 +28,7 @@
 
 .card-list{
     display: flex;
+    flex-direction: row-reverse;
 }
 
 .game{
@@ -36,10 +37,10 @@
     gap: 10px;
 }
 .card-list-item.player{
-    margin-left: calc(2vw - 140px);
+    margin-left: calc(4vw - 140px);
 }
 .card-list-item.opponent{
-    margin-right: calc(2vw - 140px);
+    margin-right: calc(4vw - 140px);
     direction: rtl;
 }
 
@@ -55,4 +56,8 @@
     font-weight: bold;
     
     
+}
+.card.back{
+    background-color:green;
+    border-color:rgb(83, 163, 61);
 }

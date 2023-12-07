@@ -37,7 +37,7 @@ const dealCards =()=>{
 };
 
 function shuffle(array){
-  for(let i = array.length -1; 1 > 0; i--){
+  for(let i = array.length -1; i > 0; i--){
     const j = Math.floor(Math.random() * (i+1));
     [array[i], array[j]] = [array[j],array[i]];
   }
@@ -53,8 +53,6 @@ const [cards, setCards] = useState(dealCards);
 function compareCards(){
   const playerStat = cards.player[0].stats[0];
   const opponentStat = cards.opponent[0].stats[0];
-
-
 
   if(playerStat.value === opponentStat.value){
     setResult("draw");
@@ -75,10 +73,10 @@ function compareCards(){
       <div className="game">
 
         <ul className="card-list">
-          {cards.player.map(pCard =>(
+          {cards.player.map((pCard, index) =>(
 
          <li className="card-list-item player" key={pCard.id}>
-          <Card card={pCard}/>
+          <Card card={index === 0 ? pCard : null}/>
         </li>
 
           ))
