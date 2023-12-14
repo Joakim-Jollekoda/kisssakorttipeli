@@ -1,4 +1,4 @@
-export default function Card({card}){
+export default function Card({card, SelectedStat, handleSelect}){
     if(!card) return <div className="card back"/>;
     
     
@@ -12,7 +12,9 @@ export default function Card({card}){
              <ul className="stat-list">
                  {card.stats.map((stat, index) =>(
  
-                 <li className="stat-list-item" key={index}>
+                 <li className={`stat-list-item${SelectedStat === index ? " selected" :  ""}`} 
+                 onClick={()=> handleSelect && handleSelect(index)}
+                 key={index}>
                      <span>{stat.name}</span>
                      <span>{stat.value}</span>
                  </li>

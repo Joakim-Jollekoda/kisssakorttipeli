@@ -52,9 +52,10 @@ export default function App()
 const[result, setResult] = useState("");
 const [cards, setCards] = useState(dealCards);
 const [gameState, setGameState] = useState("play");
+const [SelectedStat, setSelectedStat] = useState(0);
 function compareCards(){
-  const playerStat = cards.player[0].stats[0];
-  const opponentStat = cards.opponent[0].stats[0];
+  const playerStat = cards.player[0].stats[SelectedStat];
+  const opponentStat = cards.opponent[0].stats[SelectedStat];
 
   if(playerStat.value === opponentStat.value){
     setResult("draw");
@@ -78,6 +79,19 @@ function nextRound(){
       opponent
       };
     }
+    if(result === "win"){
+      return{
+        player: [...player, ...playedCards],
+         opponent
+      }
+    }
+    if(result === "loss"){
+      return{
+        player,
+        opponent: [...opponent, ...playedCards]
+      }
+    }
+    return cards;
   })
   setGameState("play");
   setResult("");
@@ -94,7 +108,10 @@ function nextRound(){
           {cards.player.map((pCard, index) =>(
 
          <li className="card-list-item player" key={pCard.id}>
-          <Card card={index === 0 ? pCard : null}/>
+          <Card card={index === 0 ? pCard : null} 
+          handleSelect={statIndex => gameState === "play" && setSelectedStat(statIndex)}
+          SelectedStat={SelectedStat}
+          />
         </li>
 
           ))
